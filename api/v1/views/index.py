@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Views implementation
+""" Views implementation. For different end points
 """
 from flask import Flask, jsonify
 from api.v1.views import app_views

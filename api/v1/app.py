@@ -4,13 +4,19 @@ from models import *
 from models import storage
 from models import classes
 
-from flask import Flask, render_template, Blueprint
+from flask import Flask, render_template, Blueprint, jsonify
 from api.v1.views import app_views
 import os
 
 app = Flask(__name__)
 
 app.register_blueprint(app_views)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    """JSON 404 error message
+    """
+    return jsonify({"error":"Not found"})
 
 
 @app.teardown_appcontext
