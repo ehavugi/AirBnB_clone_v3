@@ -2,6 +2,7 @@
 
 from models import *
 from models import storage
+from models import classes
 
 from flask import Flask, render_template, Blueprint
 from api.v1.views import app_views
