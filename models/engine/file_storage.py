@@ -39,7 +39,7 @@ class FileStorage:
         """
         if cls is None:
             return None
-        for key, value  in self.__objects.items():
+        for key, value in self.__objects.items():
             if cls == value.__class__ or cls == value.__class__.__name__:
                 if key.split(".")[-1] == id:
                     return value
@@ -71,7 +71,7 @@ class FileStorage:
                 jo = json.load(f)
             for key in jo:
                 self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
-        except:
+        except FileNotFoundError:
             pass
 
     def delete(self, obj=None):
