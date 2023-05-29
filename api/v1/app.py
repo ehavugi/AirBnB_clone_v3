@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""api/v1 app entry point
+   hanlder for api version 1.
+"""
 from models import *
 from models import storage
 from models import classes
@@ -12,11 +14,12 @@ app = Flask(__name__)
 
 app.register_blueprint(app_views)
 
+
 @app.errorhandler(404)
 def page_not_found(e):
     """JSON 404 error message
     """
-    return jsonify({"error":"Not found"})
+    return jsonify({"error": "Not found"})
 
 
 @app.teardown_appcontext
