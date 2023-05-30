@@ -8,6 +8,7 @@ from models import classes
 from models.state import State
 from models.review import Review
 
+
 @app_views.route('/reviews/<stateid>', strict_slashes=False,
                  methods=['GET', 'DELETE', 'PUT'])
 def review_info(stateid):

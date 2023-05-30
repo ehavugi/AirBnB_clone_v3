@@ -8,6 +8,7 @@ from models import classes
 from models.state import State
 from models.amenity import Amenity
 
+
 @app_views.route('/amenities/<stateid>', strict_slashes=False,
                  methods=['GET', 'DELETE', 'PUT'])
 def amenity_info(stateid):

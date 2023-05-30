@@ -8,8 +8,9 @@ from models import classes
 from models.state import State
 from models.place import Place
 
-@app_views.route('/places/<stateid>/amenities/<amenityid>', strict_slashes=False,
-                 methods=['GET', 'DELETE', 'PUT'])
+
+@app_views.route('/places/<stateid>/amenities/<amenityid>',
+                 strict_slashes=False, methods=['GET', 'DELETE', 'PUT'])
 def placeAmenity_info(stateid, amenityid):
     """Handles, GET method for getting state info with stateid
                 PUT method  for update the state info
@@ -45,7 +46,8 @@ def placeAmenity_info(stateid, amenityid):
         abort(404)
 
 
-@app_views.route("/places/<placeid>", strict_slashes=False, methods=['POST', 'GET'])
+@app_views.route("/places/<placeid>", strict_slashes=False,
+                 methods=['POST', 'GET'])
 def PlaceAmenity_list(placeid):
     """Returns stats for every class implemented
     """

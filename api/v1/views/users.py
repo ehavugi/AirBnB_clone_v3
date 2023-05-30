@@ -8,6 +8,7 @@ from models import classes
 from models.state import State
 from models.user import User
 
+
 @app_views.route('/users/<stateid>', strict_slashes=False,
                  methods=['GET', 'DELETE', 'PUT'])
 def users_info(stateid):
