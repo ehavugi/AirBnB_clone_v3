@@ -19,5 +19,9 @@ def status_page():
 def stats():
     """Returns stats for every class implemented
     """
-    stats = {key: storage.count(classes[key]) for key in classes}
+    stats = {}
+    names = {"State": "states", "City": "cities", "Place": "places",
+             "Review": "reviews", "User": "users", "Amenity": "amenities"}
+    for key in classes:
+        stats[names[key]] = storage.count(classes[key])
     return jsonify(stats)
