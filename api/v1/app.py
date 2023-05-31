@@ -19,7 +19,7 @@ app.register_blueprint(app_views)
 def page_not_found(e):
     """JSON 404 error message
     """
-    return jsonify({"error": "Not found"})
+    return jsonify({"error": "Not found"}), 404
 
 
 @app.teardown_appcontext
@@ -32,4 +32,4 @@ def closeApp(exception=None):
 if __name__ == "__main__":
     hostname = os.environ.get("HBNB_API_HOST", "0.0.0.0")
     port = os.environ.get("HBNB_API_PORT", 5000)
-    app.run(host=hostname, port=port, threaded=True, debug=False)
+    app.run(host=hostname, port=port, threaded=True, debug=True)
